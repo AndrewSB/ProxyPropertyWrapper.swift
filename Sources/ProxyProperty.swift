@@ -16,7 +16,7 @@ public struct AnyProxy<EnclosingSelf, Value> {
 
     public static subscript(
         _enclosingInstance observed: EnclosingSelf,
-        wrapped wrappedKeyPath: ReferenceWritableKeyPath<EnclosingSelf, Value>,
+        wrapped _: ReferenceWritableKeyPath<EnclosingSelf, Value>,
         storage storageKeyPath: ReferenceWritableKeyPath<EnclosingSelf, Self>
     ) -> Value {
         get {
@@ -37,4 +37,3 @@ extension NSObject: ProxyContainer {}
 public protocol ProxyContainer {
     typealias Proxy<T> = AnyProxy<Self, T>
 }
-
